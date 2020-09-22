@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from 'next/link'
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -25,6 +26,7 @@ const App = () => {
   return (
     <>
       <h1>Todo App</h1>
+      Read <Link href="/about"><a>this page!</a></Link>
       <div className="form">
         <input
           type="text"
