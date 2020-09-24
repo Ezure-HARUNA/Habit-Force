@@ -16,6 +16,13 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
+import Tooltip from '@material-ui/core/Tooltip';
+
+
+
+
 const theme = {
     spacing: 8,
   }
@@ -32,7 +39,14 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
         color: theme.palette.text.secondary,
+        height: 120,
     },
+    fab: {
+        margin: theme.spacing(2),
+      },
+    tooltip: {
+        spacing: 10,
+    }
 }));
 
  
@@ -90,8 +104,13 @@ export default function Chart() {
             }
             label="ポートフォリオ作成"
         />
-         </Paper>
-         </Grid>
+        </Paper>
+        </Grid>
+        <Tooltip title="Add" aria-label="add" m={10}>
+            <Fab color="primary" className={classes.absolute}>
+                <AddIcon />
+            </Fab>
+        </Tooltip>
     </React.Fragment>
   );
 }

@@ -1,35 +1,51 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './Title';
+
+import TextField from '@material-ui/core/TextField';
 
 function preventDefault(event) {
   event.preventDefault();
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) =>({ 
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
   depositContext: {
     flex: 1,
   },
-});
-
+},
+}));
 export default function Deposits() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Recent Deposits</Title>
-      <Typography component="p" variant="h4">
-        $3,024.00
+      <Title>やりたいことの詳細</Title>
+      
+      <form className={classes.root} noValidate autoComplete="off">
+      <TextField id="standard-basic" label="やりたいこと" />
+      </form>
+      <form className={classes.root} noValidate autoComplete="off">
+      <TextField id="standard-basic" label="詳細" />
+      </form>
+      <form className={classes.root} noValidate autoComplete="off">
+      <TextField id="standard-basic" label="目的" />
+      </form>
+      <Typography color="textSecondary" className={classes.depositContext}>
+        いつやるか
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
-        on 15 March, 2019
+        ご褒美
       </Typography>
-      <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          View balance
-        </Link>
-      </div>
+      <Typography color="textSecondary" className={classes.depositContext}>
+        カテゴリー
+      </Typography>
+
+      
     </React.Fragment>
   );
 }
