@@ -1,3 +1,8 @@
-export default function About() {
-    return <h1>aboutメニュー</h1>
-}
+import Header from './Header'
+
+export default () => (
+  <div>
+    <Header />
+    <p>Hello About.js</p>
+  </div>
+)
